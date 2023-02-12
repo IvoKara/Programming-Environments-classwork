@@ -2,9 +2,9 @@
 This repository is intended to store a C# project developed during the "Programming Systems" classes in Techical Univeristy - Sofia, Bulgaria.
 
 ## Prerequests (Linux)
-The project was initially build within Linux environment and developed using Visual Studio Code.
-<br>More specifically Debian-based. 
-<br>Tested and working on WSL2 with no differences.
+The project was initially build within **Linux** environment and developed using Visual Studio Code. <br>
+More specifically **Debian-based**. <br>
+Tested and working on **WSL2** with no differences.
 
 >  _Don't judge me :grin:, I prefer to work on Linux instead on Windows no matter the circumstances_
 
