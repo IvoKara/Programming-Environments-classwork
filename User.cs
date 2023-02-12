@@ -1,11 +1,11 @@
-namespace upr1
+namespace work
 {
     public class User
     {
-        public string? userName;
-        public string? password;
-        public string? facultyNumber;
-        public int? role;
+        public string? userName { get; set; }
+        public string? password { get; set; }
+        public string? facultyNumber { get; set; }
+        public int? role { get; set; }
 
         public override string ToString()
         {

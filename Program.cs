@@ -1,14 +1,15 @@
-﻿namespace upr1;
+﻿namespace work;
 class Program
 {
     static void Main(string[] args)
     {
-        User user = new User();
-        user.userName = "ivok";
-        user.password = "pa$$";
-        user.facultyNumber = "121220065";
-        user.role = 1;
+        LoginValidaton loginValidation = new LoginValidaton();
 
-        Console.WriteLine(user);
+        if (loginValidation.ValidateUserInput())
+        {
+            Console.WriteLine(UserData.TestUser);
+            Console.WriteLine(LoginValidaton.currentUserRole);
+        }
+
     }
 }
