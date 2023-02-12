@@ -2,7 +2,7 @@
 This repository is intended to store a C# project developed during the "Programming Systems" classes in Techical Univeristy - Sofia, Bulgaria.
 
 ## Prerequests (Linux)
-The project was initially build within **Linux** environment and developed using Visual Studio Code. <br>
+The project was initially build within **Linux** environment and developed using **Visual Studio Code** with _.NET SDK version 6_. <br>
 More specifically **Debian-based**. <br>
 Tested and working on **WSL2** with no differences.
 
