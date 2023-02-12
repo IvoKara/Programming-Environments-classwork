@@ -1,9 +1,11 @@
 # Programming Systems Classwork
+This repository is intended to store a C# project developed during the "Programming Systems" classes in Techical Univeristy - Sofia, Bulgaria.
 
-This repository is intended to store a C# project developed during the "Programming System" classes in Techical Univeristy - Sofia
+## Prerequests (Linux)
+The project was initially build within Linux environment and developed using Visual Studio Code.
+<br>More specifically Debian-based. 
+<br>Tested and working on WSL2 with no differences.
 
-## Prerequests
+>  _Don't judge me :grin:, I prefer to work on Linux instead on Windows no matter the circumstances_
 
-The project was initially build within Linux environment (I know :grin:, don't judge me I prefer to work on Linux instead on Windows no matter the circumstances), more specifically Debian-based. 
-
-So in order to setup everything follow the instructions in this gist.
+If you are interested in how to code in C# on Linux read [this gist](https://gist.github.com/IvoKara/f9a61afe9efaa13f1203ec089b9df60c).
