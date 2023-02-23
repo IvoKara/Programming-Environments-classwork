@@ -3,11 +3,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        LoginValidaton loginValidation = new LoginValidaton();
+        string userName = Console.ReadLine() ?? "";
+        string password = Console.ReadLine() ?? "";
 
-        if (loginValidation.ValidateUserInput())
+
+        LoginValidaton loginValidation = new LoginValidaton(userName, password);
+
+        User? emptyUser = null;
+
+        if (loginValidation.ValidateUserInput(ref emptyUser))
         {
-            Console.WriteLine(UserData.TestUser);
+            Console.WriteLine(emptyUser?.ToString() ?? "user is Null");
             Console.WriteLine(LoginValidaton.currentUserRole);
         }
 

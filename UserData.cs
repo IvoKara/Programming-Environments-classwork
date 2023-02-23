@@ -3,12 +3,12 @@ namespace work
     public static class UserData
     {
         private static User? _testUser;
-        public static User? TestUser
+        public static User TestUser
         {
             get
             {
                 ResetTestUserData();
-                return _testUser;
+                return _testUser!;
             }
             set { }
         }
