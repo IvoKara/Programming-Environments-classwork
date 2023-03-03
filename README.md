@@ -1,7 +1,7 @@
 # Programming Environments Classwork
 A minimal C# project developed during the "Programming Environments" classes in Techical Univeristy - Sofia, Bulgaria.
 
-## Prerequests (Linux)
+## Quick notes
 
 The project was initially built in **Linux** environment (Ubuntu) and developed using **Visual Studio Code** with [_.NET SDK version 6_](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) instead of the tranditional way under Windows with Visual Studio.
 
