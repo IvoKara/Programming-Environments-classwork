@@ -2,7 +2,8 @@
 A minimal C# project developed during the "Programming Environments" classes in Techical Univeristy - Sofia, Bulgaria.
 
 ## Prerequests (Linux)
-The project was initially built in **Linux** environment (Ubuntu) and developed using **Visual Studio Code** with _.NET SDK version 6_ instead of the tranditional way under Windows with Visual Studio.
+
+The project was initially built in **Linux** environment (Ubuntu) and developed using **Visual Studio Code** with [_.NET SDK version 6_](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) instead of the tranditional way under Windows with Visual Studio.
 
 >  _I know, but working on Linux is significantly more productive and developer-oriented than Windows, even when it comes to Microsoft's .NET and C#_
 
