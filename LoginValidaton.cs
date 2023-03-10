@@ -17,21 +17,19 @@ namespace work
 
         public bool ValidateUserInput(ref User? user)
         {
+            currentUserRole = UserRoles.ANONYMOUS;
             bool emptyCheck = AreCredentialsNullOrEmpty();
             bool lengthCheck = AreCredentialsUnderChars(5);
+
             if (emptyCheck || lengthCheck)
                 return false;
 
-            User testUser = UserData.TestUser;
-            if (
-                this.password == testUser.password &&
-                this.userName == testUser.userName
-            )
-            {
-                user = UserData.TestUser;
-                currentUserRole = (UserRoles)user.role;
-            }
+            user = UserData.IsUserPassCorrect(userName, password);
 
+            if (user == null)
+                return false;
+
+            currentUserRole = (UserRoles)user.Role;
             return true;
         }
 
