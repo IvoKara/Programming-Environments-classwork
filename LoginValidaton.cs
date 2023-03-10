@@ -27,7 +27,11 @@ namespace work
             user = UserData.IsUserPassCorrect(userName, password);
 
             if (user == null)
+            {
+                Errors.Clear();
+                Errors.Add("Не съществува такъв потребител");
                 return false;
+            }
 
             currentUserRole = (UserRoles)user.Role;
             return true;

@@ -9,12 +9,11 @@ class Program
 
         LoginValidaton loginValidation = new LoginValidaton(userName, password);
 
-        User? emptyUser = null;
+        User? user = null;
 
-        if (loginValidation.ValidateUserInput(ref emptyUser))
+        if (loginValidation.ValidateUserInput(ref user))
         {
-            Console.WriteLine(emptyUser?.ToString() ?? "user is Null");
-            Console.WriteLine(LoginValidaton.currentUserRole);
+            Console.WriteLine(user);
         }
         else
         {
@@ -23,6 +22,8 @@ class Program
                 Console.WriteLine(error);
             }
         }
+
+        Console.WriteLine("Current role: {0}", LoginValidaton.currentUserRole);
 
     }
 }

@@ -32,8 +32,8 @@ namespace work
         {
             return $"username: {UserName}\n" +
                 $"password: {Password}\n" +
-                $"faculty number: {FacultyNumber}\n" +
-                $"role id: {Role}\n ";
+                (FacultyNumber != null ? $"faculty number: {FacultyNumber}\n" : "") +
+                $"role id: {Role}";
         }
 
     }
