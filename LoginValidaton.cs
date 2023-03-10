@@ -16,8 +16,6 @@ namespace work
 
         public bool ValidateUserInput(ref User? user)
         {
-            currentUserRole = UserRoles.ADMIN;
-
             User testUser = UserData.TestUser;
             if (
                 this.password == testUser.password &&
@@ -25,6 +23,7 @@ namespace work
             )
             {
                 user = UserData.TestUser;
+                currentUserRole = (UserRoles)user.role;
             }
 
             return true;

@@ -5,7 +5,7 @@ namespace work
         public string? userName { get; set; }
         public string? password { get; set; }
         public string? facultyNumber { get; set; }
-        public int? role { get; set; }
+        public int role { get; set; }
 
         public override string ToString()
         {
