@@ -1,4 +1,4 @@
-﻿namespace work;
+﻿namespace classwork;
 class Program
 {
     static void Main(string[] args)
