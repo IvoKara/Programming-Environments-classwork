@@ -16,8 +16,8 @@ namespace work
 
         public bool ValidateUserInput(ref User? user)
         {
-            bool isUsernameEmpty = userName.Equals(String.Empty);
-            bool isPasswordEmpty = password.Equals(String.Empty);
+            bool isUsernameEmpty = String.IsNullOrEmpty(userName);
+            bool isPasswordEmpty = String.IsNullOrEmpty(password);
 
             if (isUsernameEmpty && isPasswordEmpty)
             {
