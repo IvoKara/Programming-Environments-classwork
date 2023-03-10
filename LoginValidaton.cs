@@ -4,7 +4,7 @@ namespace work
     {
         private string? userName;
         private string? password;
-        private string? error;
+        public string? error;
 
         public static UserRoles currentUserRole { get; private set; }
 
@@ -16,6 +16,25 @@ namespace work
 
         public bool ValidateUserInput(ref User? user)
         {
+            bool isUsernameEmpty = userName.Equals(String.Empty);
+            bool isPasswordEmpty = password.Equals(String.Empty);
+
+            if (isUsernameEmpty && isPasswordEmpty)
+            {
+                error = "Не са посочени потербителско име и парола";
+            }
+            else
+            {
+                if (isUsernameEmpty)
+                    error = "Не е посочено потребителско име";
+
+                if (isPasswordEmpty)
+                    error = "Не е посоченa парола";
+            }
+
+            if (isUsernameEmpty || isPasswordEmpty)
+                return false;
+
             User testUser = UserData.TestUser;
             if (
                 this.password == testUser.password &&

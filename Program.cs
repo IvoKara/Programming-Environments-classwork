@@ -16,6 +16,10 @@ class Program
             Console.WriteLine(emptyUser?.ToString() ?? "user is Null");
             Console.WriteLine(LoginValidaton.currentUserRole);
         }
+        else
+        {
+            Console.WriteLine(loginValidation.error);
+        }
 
     }
 }
