@@ -6,6 +6,7 @@ namespace work
         public string? Password { get; set; }
         public string? FacultyNumber { get; set; }
         public int Role { get; set; }
+        public DateTime CreatedAt { get; private set; }
 
         public User() { }
 
@@ -14,6 +15,7 @@ namespace work
             UserName = userName;
             Password = password;
             Role = (int)UserRoles.ANONYMOUS;
+            CreatedAt = DateTime.Now;
         }
 
         public User(string userName, string password, int role)
@@ -33,7 +35,8 @@ namespace work
             return $"username: {UserName}\n" +
                 $"password: {Password}\n" +
                 (FacultyNumber != null ? $"faculty number: {FacultyNumber}\n" : "") +
-                $"role id: {Role}";
+                $"role id: {Role}\n" +
+                $"created at: {CreatedAt}";
         }
 
     }
