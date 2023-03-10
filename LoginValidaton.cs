@@ -8,11 +8,20 @@ namespace work
 
         public static UserRoles currentUserRole { get; private set; }
 
+        public delegate void ActionOnError(string errorMsg);
+        private ActionOnError errorAction;
+
         public LoginValidaton(string? userName, string? password)
         {
             this.userName = userName;
             this.password = password;
             this.Errors = new List<string>();
+        }
+
+        public LoginValidaton(string? userName, string? password, ActionOnError errorAction)
+        : this(userName, password)
+        {
+            this.errorAction = new ActionOnError(errorAction);
         }
 
         public bool ValidateUserInput(ref User? user)
@@ -28,8 +37,9 @@ namespace work
 
             if (user == null)
             {
-                Errors.Clear();
-                Errors.Add("Не съществува такъв потребител");
+                // Errors.Clear();
+                // Errors.Add("Не съществува такъв потребител");
+                errorAction("Не съществува такъв потребител");
                 return false;
             }
 
@@ -49,10 +59,12 @@ namespace work
             else
             {
                 if (isUsernameEmpty)
-                    Errors.Add("Не е посочено потребителско име");
+                    errorAction("Не е посочено потребителско име");
+                // Errors.Add("Не е посочено потребителско име");
 
                 if (isPasswordEmpty)
-                    Errors.Add("Не е посоченa парола");
+                    errorAction("Не е посоченa парола");
+                // Errors.Add("Не е посоченa парола");
 
                 return true;
             }
@@ -70,10 +82,12 @@ namespace work
             else
             {
                 if (isUsernameUnder)
-                    Errors.Add($"Потербителското име трябва да бъде над {number} символа");
+                    errorAction($"Потербителското име трябва да бъде над {number} символа");
+                // Errors.Add($"Потербителското име трябва да бъде над {number} символа");
 
                 if (isPasswordUnder)
-                    Errors.Add($"Паролата трябва да бъде над {number} символа");
+                    errorAction($"Паролата трябва да бъде над {number} символа");
+                // Errors.Add($"Паролата трябва да бъде над {number} символа");
 
                 return true;
             }

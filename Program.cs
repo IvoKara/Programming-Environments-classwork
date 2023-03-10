@@ -7,7 +7,7 @@ class Program
         string password = Console.ReadLine() ?? "";
 
 
-        LoginValidaton loginValidation = new LoginValidaton(userName, password);
+        LoginValidaton loginValidation = new LoginValidaton(userName, password, (msg) => Console.WriteLine(msg));
 
         User? user = null;
 
@@ -15,13 +15,13 @@ class Program
         {
             Console.WriteLine(user);
         }
-        else
-        {
-            foreach (var error in loginValidation.Errors)
-            {
-                Console.WriteLine(error);
-            }
-        }
+        // else
+        // {
+        //     foreach (var error in loginValidation.Errors)
+        //     {
+        //         Console.WriteLine(error);
+        //     }
+        // }
 
         Console.WriteLine("Current role: {0}", LoginValidaton.currentUserRole);
 
