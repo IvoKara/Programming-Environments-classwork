@@ -18,7 +18,11 @@ class Program
         }
         else
         {
-            Console.WriteLine(loginValidation.error);
+            foreach (var error in loginValidation.Errors)
+            {
+
+                Console.WriteLine(error);
+            }
         }
 
     }
