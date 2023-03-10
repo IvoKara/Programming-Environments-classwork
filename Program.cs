@@ -20,7 +20,6 @@ class Program
         {
             foreach (var error in loginValidation.Errors)
             {
-
                 Console.WriteLine(error);
             }
         }
