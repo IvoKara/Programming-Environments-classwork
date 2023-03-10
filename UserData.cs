@@ -25,7 +25,7 @@ namespace work
 
         public static User? IsUserPassCorrect(string userName, string password)
         {
-            foreach (User testUser in _testUsers)
+            foreach (User testUser in TestUsers)
             {
                 if (
                     testUser.UserName == userName &&
