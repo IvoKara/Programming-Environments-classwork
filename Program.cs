@@ -42,7 +42,8 @@ class Program
             Console.WriteLine("1: Change user's role");
             Console.WriteLine("2: Change user's active to time");
             Console.WriteLine("3: List of users");
-            Console.WriteLine("4: Preview activity");
+            Console.WriteLine("4: Preview log activity");
+            Console.WriteLine("5: Preview current session activity");
 
             Console.Write("\nChoose an option: ");
             option = Int32.Parse(Console.ReadLine() ?? "-1");
@@ -134,6 +135,10 @@ class Program
 
                 case 4:
                     Logger.DisplayLogFromFile();
+                    break;
+
+                case 5:
+                    Logger.GetCurrentSessionActivities();
                     break;
 
                 default:
