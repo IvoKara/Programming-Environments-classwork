@@ -1,4 +1,5 @@
-﻿namespace classwork;
+﻿using System.Text;
+namespace classwork;
 class Program
 {
     static void Main(string[] args)
@@ -134,11 +135,32 @@ class Program
                     break;
 
                 case 4:
-                    Logger.DisplayLogFromFile();
+                    {
+                        StringBuilder sb = new StringBuilder();
+                        IEnumerable<string> activities = Logger.DisplayLogFromFile();
+
+
+                        foreach (string line in activities)
+                        {
+                            sb.Append(line);
+                        }
+
+                        Console.WriteLine(sb);
+                    }
                     break;
 
                 case 5:
-                    Logger.GetCurrentSessionActivities();
+                    {
+                        StringBuilder sb = new StringBuilder();
+                        IEnumerable<string> currentActs = Logger.GetCurrentSessionActivities();
+
+                        foreach (string line in currentActs)
+                        {
+                            sb.Append(line);
+                        }
+
+                        Console.WriteLine(sb);
+                    }
                     break;
 
                 default:

@@ -16,34 +16,30 @@ public static class Logger
             + activity + '\n';
         currentSessionActivities.Add(activityLine);
 
-        if (File.Exists(file))
+        if (!File.Exists(file))
         {
-            File.AppendAllText(file, activityLine + '\n');
+            File.Create(file);
         }
+        File.AppendAllText(file, activityLine);
     }
 
-    public static void GetCurrentSessionActivities()
+    public static IEnumerable<string> GetCurrentSessionActivities()
     {
-        StringBuilder sb = new StringBuilder();
-        foreach (string activity in currentSessionActivities)
-        {
-            sb.Append(activity);
-        }
-        Console.WriteLine(sb);
+        return currentSessionActivities;
     }
 
-    public static void DisplayLogFromFile()
+    public static IEnumerable<string> DisplayLogFromFile()
     {
+        List<string> logs = new List<string>();
+
         using (StreamReader sr = new StreamReader(file))
         {
-            StringBuilder fullLog = new StringBuilder();
-
             while (!sr.EndOfStream)
             {
-                fullLog.Append(sr.ReadLine() + '\n');
+                logs.Add(sr.ReadLine() + '\n');
             }
-
-            Console.WriteLine(fullLog);
         }
+
+        return logs;
     }
 }
