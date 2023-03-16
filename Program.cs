@@ -1,4 +1,4 @@
-namespace work;
+﻿namespace work;
 class Program
 {
     static void Main(string[] args)
@@ -40,7 +40,9 @@ class Program
         {
             Console.WriteLine("\n0: Exit");
             Console.WriteLine("1: Change user's role");
-            Console.WriteLine("2: Change user's ative to time");
+            Console.WriteLine("2: Change user's active to time");
+            Console.WriteLine("3: List of users");
+            Console.WriteLine("4: Preview activity");
 
             Console.Write("\nChoose an option: ");
             option = Int32.Parse(Console.ReadLine() ?? "-1");
@@ -125,6 +127,13 @@ class Program
 
                         UserData.SetUserActiveTo(ref user, newDate);
                     }
+                    break;
+
+                case 3:
+                    break;
+
+                case 4:
+                    Logger.DisplayLogFromFile();
                     break;
 
                 default:

@@ -16,7 +16,19 @@ public static class Logger
 
         if (File.Exists(file))
         {
-            File.AppendAllText(file, activityLine);
+            File.AppendAllText(file, activityLine + '\n');
+        }
+    }
+
+    public static void DisplayLogFromFile()
+    {
+        using (StreamReader sr = new StreamReader(file))
+        {
+            string? line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
         }
     }
 }
