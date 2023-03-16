@@ -9,14 +9,14 @@ class Program
         string password = Console.ReadLine() ?? "";
 
 
-        LoginValidaton loginValidation = new LoginValidaton(userName, password, (msg) => Console.WriteLine(msg));
+        LoginValidation loginValidation = new LoginValidation(userName, password, (msg) => Console.WriteLine(msg));
 
         User? user = null;
 
         if (loginValidation.ValidateUserInput(ref user))
         {
             Console.WriteLine(user);
-            Console.WriteLine("Current role: {0}", LoginValidaton.currentUserRole);
+            Console.WriteLine("Current role: {0}", LoginValidation.currentUserRole);
 
             if ((UserRoles)user!.Role == UserRoles.ADMIN)
             {

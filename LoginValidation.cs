@@ -1,6 +1,6 @@
 namespace work;
 
-public class LoginValidaton
+public class LoginValidation
 {
     private string? userName;
     private string? password;
@@ -11,14 +11,14 @@ public class LoginValidaton
     public delegate void ActionOnError(string errorMsg);
     private ActionOnError errorAction;
 
-    public LoginValidaton(string? userName, string? password)
+    public LoginValidation(string? userName, string? password)
     {
         this.userName = userName;
         this.password = password;
         this.Errors = new List<string>();
     }
 
-    public LoginValidaton(string? userName, string? password, ActionOnError errorAction)
+    public LoginValidation(string? userName, string? password, ActionOnError errorAction)
     : this(userName, password)
     {
         this.errorAction = new ActionOnError(errorAction);
