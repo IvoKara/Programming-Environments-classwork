@@ -7,6 +7,7 @@ public class LoginValidation
     public List<string> Errors { get; private set; }
 
     public static UserRoles currentUserRole { get; private set; }
+    public static string? currentUserUserName { get; private set; }
 
     public delegate void ActionOnError(string errorMsg);
     private ActionOnError errorAction;
@@ -44,6 +45,9 @@ public class LoginValidation
         }
 
         currentUserRole = (UserRoles)user.Role;
+        currentUserUserName = user.UserName;
+
+        Logger.LogActivity("Успешен Login");
         return true;
     }
 

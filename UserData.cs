@@ -42,6 +42,7 @@ public static class UserData
         if (user != null)
         {
             user.ValidUntil = newDate;
+            Logger.LogActivity("Промяна на активност на " + user.UserName);
         }
     }
 
@@ -50,6 +51,7 @@ public static class UserData
         if (user != null)
         {
             user.Role = (int)newRole;
+            Logger.LogActivity("Промяна на роля на " + user.UserName);
         }
     }
 
