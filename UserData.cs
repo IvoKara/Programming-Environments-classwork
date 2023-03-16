@@ -1,4 +1,4 @@
-namespace work;
+namespace classwork;
 
 public static class UserData
 {

@@ -1,5 +1,6 @@
 using System.Text;
-namespace work;
+
+namespace classwork;
 
 public static class Logger
 {
