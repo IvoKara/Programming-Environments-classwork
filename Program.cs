@@ -1,4 +1,4 @@
-﻿namespace work;
+namespace work;
 class Program
 {
     static void Main(string[] args)
@@ -48,6 +48,7 @@ class Program
             switch (option)
             {
                 case 0:
+                    Console.WriteLine("Goodbye.");
                     break;
 
                 case 1:
@@ -60,7 +61,6 @@ class Program
                         if (user == null)
                         {
                             Console.WriteLine("No such user.");
-                            option = Math.Abs(option) * -1;
                             break;
                         }
 
@@ -88,7 +88,6 @@ class Program
 
                         } while (true);
 
-
                         UserData.AssignUserRole(ref user, (UserRoles)newRole);
                     }
                     break;
@@ -103,7 +102,6 @@ class Program
                         if (user == null)
                         {
                             Console.WriteLine("No such user.");
-                            option = Math.Abs(option) * -1;
                             break;
                         }
 
@@ -126,7 +124,6 @@ class Program
                         } while (!validFormat);
 
                         UserData.SetUserActiveTo(ref user, newDate);
-                        Console.WriteLine(user);
                     }
                     break;
 
@@ -136,7 +133,7 @@ class Program
                     break;
             }
 
-        } while (option < 0);
+        } while (option != 0);
     }
 
     static bool FindToEditUser()
