@@ -4,6 +4,7 @@ public static class Logger
 {
     private static List<string> currentSessionActivities = new List<string>();
 
+    private static string file = "test.txt";
 
     public static void LogActivity(string activity)
     {
@@ -12,5 +13,10 @@ public static class Logger
             + LoginValidation.currentUserRole + ";"
             + activity;
         currentSessionActivities.Add(activityLine);
+
+        if (File.Exists(file))
+        {
+            File.AppendAllText(file, activityLine);
+        }
     }
 }
