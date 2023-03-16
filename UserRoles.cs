@@ -1,11 +1,10 @@
-namespace classwork
+namespace classwork;
+
+public enum UserRoles
 {
-    public enum UserRoles
-    {
-        ANONYMOUS,
-        ADMIN,
-        INSPECTOR,
-        PROFESSOR,
-        STUDENT
-    }
+    ANONYMOUS,
+    ADMIN,
+    INSPECTOR,
+    PROFESSOR,
+    STUDENT
 }

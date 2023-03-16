@@ -1,28 +1,69 @@
-namespace classwork
+namespace classwork;
+
+public static class UserData
 {
-    public static class UserData
+    private static List<User> _testUsers = new List<User>();
+    public static List<User> TestUsers
     {
-        private static User? _testUser;
-        public static User? TestUser
+        get
         {
-            get
-            {
-                ResetTestUserData();
-                return _testUser;
-            }
-            set { }
+            ResetTestUserData();
+            return _testUsers;
+        }
+        set { }
+    }
+
+    private static void ResetTestUserData()
+    {
+        if (_testUsers.Count == 0)
+        {
+            _testUsers.Add(new User("admin", "admin", (int)UserRoles.ADMIN));
+            _testUsers.Add(new User("pesho", "pesho", "121220434", (int)UserRoles.STUDENT));
+            _testUsers.Add(new User("sasho", "sasho", "121220543", (int)UserRoles.STUDENT));
+        }
+    }
+
+    public static User? IsUserPassCorrect(string userName, string password)
+    {
+        foreach (User testUser in TestUsers)
+        {
+            if (
+                testUser.UserName == userName &&
+                testUser.Password == password
+            )
+            { return testUser; }
         }
 
-        private static void ResetTestUserData()
+        return null;
+    }
+
+    public static void SetUserActiveTo(ref User? user, DateTime newDate)
+    {
+        if (user != null)
         {
-            if (_testUser == null)
-            {
-                _testUser = new User();
-                _testUser.userName = "ivok";
-                _testUser.password = "pa$$";
-                _testUser.facultyNumber = "121220065";
-                _testUser.role = 1;
-            }
+            user.ValidUntil = newDate;
+            Logger.LogActivity("Промяна на активност на " + user.UserName);
         }
+    }
+
+    public static void AssignUserRole(ref User? user, UserRoles newRole)
+    {
+        if (user != null)
+        {
+            user.Role = (int)newRole;
+            Logger.LogActivity("Промяна на роля на " + user.UserName);
+        }
+    }
+
+    // written by my own
+    public static User? findUserByUserName(string userName)
+    {
+        foreach (User user in TestUsers)
+        {
+            if (user.UserName == userName)
+                return user;
+        }
+
+        return null;
     }
 }

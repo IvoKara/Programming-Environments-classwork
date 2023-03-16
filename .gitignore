@@ -1,10 +1,15 @@
 # Build results
-
 [Dd]ebug/
 [Rr]elease/
 x64/
 [Bb]in/
 [Oo]bj/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
 
 # Other
 *_i.c
@@ -35,4 +40,4 @@ x64/
 *.exe
 
 *.swp
-
+*.txt
