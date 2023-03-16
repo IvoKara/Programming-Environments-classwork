@@ -36,3 +36,7 @@ x64/
 
 *.swp
 
+.vscode
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
