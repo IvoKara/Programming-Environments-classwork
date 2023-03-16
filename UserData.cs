@@ -36,5 +36,33 @@ namespace work
 
             return null;
         }
+
+        public static void SetUserActiveTo(ref User? user, DateTime newDate)
+        {
+            if (user != null)
+            {
+                user.ValidUntil = newDate;
+            }
+        }
+
+        public static void AssignUserRole(ref User? user, UserRoles newRole)
+        {
+            if (user != null)
+            {
+                user.Role = (int)newRole;
+            }
+        }
+
+        // written by my own
+        public static User? findUserByUserName(string userName)
+        {
+            foreach (User user in TestUsers)
+            {
+                if (user.UserName == userName)
+                    return user;
+            }
+
+            return null;
+        }
     }
 }

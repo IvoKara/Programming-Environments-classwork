@@ -8,6 +8,8 @@ namespace work
         public int Role { get; set; }
         public DateTime CreatedAt { get; private set; }
 
+        public DateTime ValidUntil { get; set; }
+
         public User() { }
 
         public User(string userName, string password)
@@ -18,14 +20,15 @@ namespace work
             CreatedAt = DateTime.Now;
         }
 
-        public User(string userName, string password, int role)
+        public User(string userName, string password, int role, DateTime? validUnitl = null)
         : this(userName, password)
         {
             Role = role;
+            ValidUntil = validUnitl ?? DateTime.MaxValue;
         }
 
-        public User(string userName, string password, string facultyNumber, int role)
-        : this(userName, password, role)
+        public User(string userName, string password, string facultyNumber, int role, DateTime? validUnitl = null)
+        : this(userName, password, role, validUnitl)
         {
             FacultyNumber = facultyNumber;
         }
@@ -36,8 +39,8 @@ namespace work
                 $"password: {Password}\n" +
                 (FacultyNumber != null ? $"faculty number: {FacultyNumber}\n" : "") +
                 $"role id: {Role}\n" +
-                $"created at: {CreatedAt}";
+                $"created at: {CreatedAt}\n" +
+                $"valid until: {ValidUntil}";
         }
-
     }
 }
