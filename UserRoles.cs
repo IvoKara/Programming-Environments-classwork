@@ -1,11 +1,10 @@
-namespace work
+namespace work;
+
+public enum UserRoles
 {
-    public enum UserRoles
-    {
-        ANONYMOUS,
-        ADMIN,
-        INSPECTOR,
-        PROFESSOR,
-        STUDENT
-    }
+    ANONYMOUS,
+    ADMIN,
+    INSPECTOR,
+    PROFESSOR,
+    STUDENT
 }
