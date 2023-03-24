@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace StudentInfoSystem
 {
-    internal class StudentData
+    internal static class StudentData
     {
-        public List<Student> TestStudents
+        public static List<Student> TestStudents
         {
             get
             {
