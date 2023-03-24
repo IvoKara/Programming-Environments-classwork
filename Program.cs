@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Text.RegularExpressions;
+using System.Text;
 namespace classwork;
 class Program
 {
@@ -146,20 +147,41 @@ class Program
                         }
 
                         Console.WriteLine(sb);
+                        PressAnyToContinue();
                     }
                     break;
 
                 case 5:
                     {
-                        StringBuilder sb = new StringBuilder();
-                        IEnumerable<string> currentActs = Logger.GetCurrentSessionActivities();
+                        string filter = "";
+                        bool isInputValid = false;
+                        do
+                        {
+                            Console.Write("Filter ? (y/n): ");
+                            string YesNoChar = Console.ReadLine() ?? "";
 
-                        foreach (string line in currentActs)
+                            if (Regex.IsMatch(YesNoChar, @"^([yY](es)?|[nN](o)?)$"))
+                            {
+                                isInputValid = true;
+
+                                if (YesNoChar.ToLower().StartsWith('y'))
+                                {
+                                    Console.Write("type filter here: ");
+                                    filter = Console.ReadLine() ?? "";
+                                }
+                            }
+                        } while (!isInputValid);
+
+                        StringBuilder sb = new StringBuilder();
+                        IEnumerable<string> currentActivities = Logger.GetCurrentSessionActivities(filter);
+
+                        foreach (string line in currentActivities)
                         {
                             sb.Append(line);
                         }
 
                         Console.WriteLine(sb);
+                        PressAnyToContinue();
                     }
                     break;
 
@@ -186,5 +208,11 @@ class Program
         }
 
         return true;
+    }
+
+    static void PressAnyToContinue()
+    {
+        Console.WriteLine("Press any key to continue.");
+        Console.ReadKey();
     }
 }

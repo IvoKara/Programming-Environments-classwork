@@ -23,9 +23,15 @@ public static class Logger
         File.AppendAllText(file, activityLine);
     }
 
-    public static IEnumerable<string> GetCurrentSessionActivities()
+    public static IEnumerable<string> GetCurrentSessionActivities(string filter = "")
     {
-        return currentSessionActivities;
+        List<string> filteredActivities = (
+                from activity in currentSessionActivities
+                where activity.Contains(filter)
+                select activity
+            ).ToList();
+
+        return filteredActivities;
     }
 
     public static IEnumerable<string> DisplayLogFromFile()
