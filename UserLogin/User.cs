@@ -1,4 +1,4 @@
-namespace classwork;
+namespace UserLogin;
 
 public class User
 {

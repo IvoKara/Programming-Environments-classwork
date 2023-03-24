@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/classwork/classwork.csproj",
+                "${workspaceFolder}/UserLogin/UserLogin.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/classwork/classwork.csproj",
+                "${workspaceFolder}/UserLogin/UserLogin.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/classwork/classwork.csproj"
+                "${workspaceFolder}/UserLogin/UserLogin.csproj"
             ],
             "problemMatcher": "$msCompile"
         },

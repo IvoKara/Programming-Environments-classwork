@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace classwork;
+namespace UserLogin;
 
 public static class Logger
 {
@@ -16,10 +16,7 @@ public static class Logger
             + activity + '\n';
         currentSessionActivities.Add(activityLine);
 
-        if (File.Exists(file))
-        {
-            File.AppendAllText(file, activityLine + '\n');
-        }
+        File.AppendAllText(file, activityLine + '\n');
     }
 
     public static void GetCurrentSessionActivities()
