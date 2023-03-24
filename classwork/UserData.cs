@@ -25,16 +25,11 @@ public static class UserData
 
     public static User? IsUserPassCorrect(string userName, string password)
     {
-        foreach (User testUser in TestUsers)
-        {
-            if (
-                testUser.UserName == userName &&
-                testUser.Password == password
-            )
-            { return testUser; }
-        }
-
-        return null;
+        return (
+            from testUser in TestUsers
+            where testUser.UserName == userName && testUser.Password == password
+            select testUser
+        ).FirstOrDefault();
     }
 
     public static void SetUserActiveTo(ref User? user, DateTime newDate)
