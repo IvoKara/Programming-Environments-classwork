@@ -5,6 +5,10 @@ x64/
 [Bb]in/
 [Oo]bj/
 
+#Visual Studio
+.vs
+.vs/*
+
 # Visual Studio Code
 .vscode/*
 !.vscode/launch.json
