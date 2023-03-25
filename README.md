@@ -7,6 +7,8 @@ The project was initially built in **Linux** environment (Ubuntu) and developed 
 
 >  _I know, I know, but I prefer working on Linux rather than on Windows, even when it comes to .NET and C#. I do not need to wait Visual Studio with all it's bloatware to finish loading when I'm going to develop a simple applications for learning pourpouses._ :smile:
 
+But unfortunately there were circumstances (as WPF) that forced me to start using Vusial Studio to continue developing this project. :expressionless:
+
 Tested and working on **WSL2** with no differences.
 
 ### Setup 
