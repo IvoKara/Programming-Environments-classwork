@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,5 +23,20 @@ namespace StudentInfoSystem
         public int Stream { get; set; }
         public int GroupNumber { get; set; }
 
+        public override string ToString()
+        {
+            return $"FirstName: {FirstName}\n" +
+                $"LastName: {LastName}\n" +
+                $"MiddleName: {MiddleName}\n" +
+                $"Faculty: {Faculty}\n" +
+                $"Speciality: {Speciality}\n" +
+                $"Degree: {Degree}\n" +
+                $"Status: {Status}\n" +
+                $"FacultyNumber: {FacultyNumber}\n" + 
+                $"Course: {Course}\n" +
+                $"Stream: {Stream}\n" +
+                $"GroupNumber: {GroupNumber}\n";
+        }
     }
+
 }

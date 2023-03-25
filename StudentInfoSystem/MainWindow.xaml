@@ -7,6 +7,73 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <GroupBox Header="Лични данни" x:Name="personalInfo" Height="131" Margin="25,21,25,0" VerticalAlignment="Top">
+            <StackPanel Height="89">
+                <TextBlock>
+                    <Label Content="Име:"></Label>
+                    <TextBox x:Name="firstName" Width="356"></TextBox>
+                </TextBlock>
+                <TextBlock>
+                    <Label Content="Презиме:"></Label>
+                    <TextBox x:Name="middleName" Width="330"></TextBox>
+                </TextBlock>
+                <TextBlock>
+                    <Label Content="Фамилия:"></Label>
+                    <TextBox x:Name="lastName" Width="330"></TextBox>
+                </TextBlock>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Студенска информация" x:Name="studedntInfo" Margin="25,169,25,0" VerticalAlignment="Top" Height="192">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0">
+                    <Label Content="Факултет:"></Label>
+                    <TextBox x:Name="faculty" Width="290"></TextBox>
+                </TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0">
+                    <Label Content="Специалност:"></Label>
+                    <TextBox x:Name="speciality" Width="256"></TextBox>
+                </TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="0">
+                    <Label Content="ОКС:"></Label>
+                    <TextBox x:Name="degree" Width="256"></TextBox>
+                </TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="0">
+                    <Label Content="Статус:"></Label>
+                    <TextBox x:Name="status" Width="256"></TextBox>
+                </TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="0">
+                    <Label Content="Фак. номер:"></Label>
+                    <TextBox x:Name="facultyNumber" Width="256"></TextBox>
+                </TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="1">
+                    <Label Content="Курс:"></Label>
+                    <TextBox x:Name="course" Width="256"></TextBox>
+                </TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1">
+                    <Label Content="Поток:"></Label>
+                    <TextBox x:Name="stream" Width="256"></TextBox>
+                </TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="1">
+                    <Label Content="Група:"></Label>
+                    <TextBox x:Name="group" Width="256"></TextBox>
+                </TextBlock>
+
+            </Grid>
+        </GroupBox>
+        <Button Content="Submit" x:Name="submitButton" HorizontalAlignment="Left" Margin="84,385,0,0" VerticalAlignment="Top" Click="submitButton_Click"/>
+        <Button Content="Clear" x:Name="clearButton" HorizontalAlignment="Left" Margin="145,385,0,0" VerticalAlignment="Top" Click="clearButton_Click"/>
+        <Button Content="Disable" x:Name="toggleEnable" HorizontalAlignment="Left" Margin="199,385,0,0" VerticalAlignment="Top" Click="toggleEnableButton_Click"/>
 
     </Grid>
 </Window>
