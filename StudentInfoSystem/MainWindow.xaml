@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentInfoSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1086">
     <Grid>
-        <GroupBox Header="Лични данни" x:Name="personalInfo" Height="131" Margin="25,21,25,0" VerticalAlignment="Top">
+        <GroupBox Header="Лични данни" x:Name="personalInfo" Height="131" Margin="362,21,25,0" VerticalAlignment="Top">
             <StackPanel Height="89">
                 <TextBlock>
                     <Label Content="Име:"></Label>
@@ -23,7 +23,7 @@
                 </TextBlock>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="Студенска информация" x:Name="studedntInfo" Margin="25,169,25,0" VerticalAlignment="Top" Height="192">
+        <GroupBox Header="Студенска информация" x:Name="studedntInfo" Margin="362,169,25,0" VerticalAlignment="Top" Height="192">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
@@ -71,9 +71,12 @@
 
             </Grid>
         </GroupBox>
-        <Button Content="Submit" x:Name="submitButton" HorizontalAlignment="Left" Margin="84,385,0,0" VerticalAlignment="Top" Click="submitButton_Click"/>
-        <Button Content="Clear" x:Name="clearButton" HorizontalAlignment="Left" Margin="145,385,0,0" VerticalAlignment="Top" Click="clearButton_Click"/>
-        <Button Content="Disable" x:Name="toggleEnable" HorizontalAlignment="Left" Margin="199,385,0,0" VerticalAlignment="Top" Click="toggleEnableButton_Click"/>
+        <Button Content="Submit" x:Name="submitButton" HorizontalAlignment="Left" Margin="369,386,0,0" VerticalAlignment="Top" Click="submitButton_Click"/>
+        <Button Content="Clear" x:Name="clearButton" HorizontalAlignment="Left" Margin="430,386,0,0" VerticalAlignment="Top" Click="clearButton_Click"/>
+        <Button Content="Disable" x:Name="toggleEnable" HorizontalAlignment="Left" Margin="484,386,0,0" VerticalAlignment="Top" Click="toggleEnableButton_Click"/>
+        <GroupBox Header="Снимка" Margin="24,21,747,28" x:Name="photo">
+            <Image></Image>
+        </GroupBox>
 
     </Grid>
 </Window>
